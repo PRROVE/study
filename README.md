@@ -1,4 +1,4 @@
 # 2025-04-10
-*js 기본구문 및 예제학습
-*Python자료구조 공부
-*READ ME을 써보며 GIT TOOL 공부
+* js 기본구문 및 예제학습
+* Python자료구조 공부
+* READ ME을 써보며 GIT TOOL 공부
