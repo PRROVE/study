@@ -121,3 +121,7 @@ function _addToArray(uint _number) private {
 }
 // private는 컨트랙트 내의 다른 함수들만이 이 함수를 호출하여 numbers 배열로 무언가를 추가할 수 있다는 것을 의미
 </pre>
+
+## 함수 더 알아보기
+
+### 반환값
