@@ -125,3 +125,27 @@ function _addToArray(uint _number) private {
 ## 함수 더 알아보기
 
 ### 반환값
+<pre>
+string greeting = "What's up dog";
+
+function sayHello() public returns (string) {
+  return greeting;
+}
+// return을 사용하여 반환하고자 하는 종류 선언
+</pre>
+
+### 함수제어자
+
+<pre>
+function sayHello() public view returns (string) {}
+// view 함수는 데이터를 보기만 하고 변경하지 않는다는 뜻
+</pre>
+<pre>
+function _multiply(uint a, uint b) private pure returns (uint) {
+  return a * b;
+}
+// pure 앱에서 어떤 데이터도 접근하지 않는 것을 의미
+// 사칙연산을 할 경우에 사용
+</pre>
+
+## Keccak256과 형 변환
