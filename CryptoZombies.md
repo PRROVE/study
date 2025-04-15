@@ -149,3 +149,59 @@ function _multiply(uint a, uint b) private pure returns (uint) {
 </pre>
 
 ## Keccak256과 형 변환
+> 이더리움은 SHA3의 한 버전인 keccak256를 내장 해시 함수로 가지고 있지. 해시 함수는 기본적으로 입력 스트링을 랜덤 256비트 16진수로 매핑  
+> `Keccak- 원래 개발된 해시 함수 이름` `SHA3- Keccak을 바탕으로 NIST가 정식 표준화된 버전`  
+> `Keccak256- Keccak이 256비트 버전` `매핑- 입력과 출력을 이어주는 관계`
+<pre>
+예시 의사 난수 발생기
+
+//6e91ec6b618bb462a4a6ee5aa2cb0e9cf30f7a052bb467b0ba58b8748c00d2e5
+keccak256("aaaab");
+//b1f078126895a1424524de5321b339ab00408010b7cf0e6ed451514981e58aa9
+keccak256("aaaac");
+
+// b- > c 한글자만 바꼇는데 해쉬값이 바뀜
+</pre>
+
+### 형 변환
+<pre>
+uint8 a = 5;
+uint b = 6;
+// a * b가 uint8이 아닌 uint를 반환하기 때문에 에러 메시지가 난다:
+uint8 c = a * b; 
+// b를 uint8으로 형 변환해서 코드가 제대로 작동하도록 해야 한다:
+uint8 c = a * uint8(b); 
+</pre>
+
+## 이벤트
+> 나의 컨트랙트가 블록체인 상에서 자네 앱의 사용자 단에서 무언가 액션이 발생했을 때 의사소통하는 방법
+<pre>
+// 이벤트를 선언한다
+event IntegersAdded(uint x, uint y, uint result);
+
+function add(uint _x, uint _y) public {
+  uint result = _x + _y;
+  // 이벤트를 실행하여 앱에게 add 함수가 실행되었음을 알린다:
+  IntegersAdded(_x, _y, result);
+  return result;
+}
+</pre>
+
+---
+
+# Web3.js
+> 이더리움은 Web3.js라고하는 자바스크립트 라이브러리를 가지고 있음  
+> `블록체인서 데이터를 읽고 쓰고 싶을때`  
+> `smart contract에 함수를 호출하거나 이벤트를 받을때`  
+> js에서 이러한 것들을 가능하게 해주는 Web3.js  
+ * 종류  
+     * Web1- 읽기(정적 웹사이트)
+     * web2- 읽기 + 쓰기(페이스북, 유튜브 같은 플랫폼) 
+     * web3- 읽기 + 쓰기 + 소유(블록체인 기반, 탈중앙화된 웹)  
+ * 할 수 있는 일  
+     * 블록 정보 가져오기- 	블록 번호, 트랜잭션, 해시 등
+     * smart contract 호출- 	함수 실행 (read/write)
+     * 이더 전송- 계좌 간 ETH 송금
+     * event 리스닝- 컨트랙트에서 emit 한 이벤트 감지
+     * 계정정보- 사용자의 지갑 주소 확인
+     * 서명- 사용자의 키로 메시지 서명 
