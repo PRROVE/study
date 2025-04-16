@@ -180,3 +180,36 @@ contract MyContract {
 //내 컨트랙트가 이더리움 블록체인상의 다른 어떤 컨트랙트와도 상호작용할 수 있음 
 //상호작용하는 함수가 public이나 external로 선언되어 있어야 함
 </pre>
+
+# 다수의 반환값
+<pre>
+function multipleReturns() internal returns(uint a, uint b, uint c) {
+  return (1, 2, 3);
+}
+
+function processMultipleReturns() external {
+  uint a;
+  uint b;
+  uint c;
+  // 다음과 같이 다수 값을 할당한다:
+  (a, b, c) = multipleReturns();
+}
+
+// 혹은 단 하나의 값에만 관심이 있을 경우: 
+function getLastReturnValue() external {
+  uint c;
+  // 다른 필드는 빈칸으로 놓기만 하면 된다: 
+  (,,c) = multipleReturns();
+}
+</pre>
+
+# if문
+> js의 if문이랑 동일
+<pre>
+function eatBLT(string sandwich) public {
+  // 스트링 간의 동일 여부를 판단하기 위해 keccak256 해시 함수를 이용해야 한다는 것을 기억하자 
+  if (keccak256(sandwich) == keccak256("BLT")) {
+    eat();
+  }
+}
+</pre>
