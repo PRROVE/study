@@ -78,11 +78,11 @@ contract newContract is SomeOtherContract {
 
 # Storage vs Memory
 > 변수를 저장할 수 있는 공간
-> * Storage
->     * 블록체인 상에 영구적으로 저장되는 변수
-> * Memory
->     * 임시적으로 저장되는 변수
->     * Contract 함수에 대한 외부 호출들이 일어나는 사이에 지워진다
+* Storage
+    * 블록체인 상에 영구적으로 저장되는 변수
+* Memory
+    * 임시적으로 저장되는 변수
+    * Contract 함수에 대한 외부 호출들이 일어나는 사이에 지워진다
 
 <pre>
 contract SandwichFactory {
@@ -116,4 +116,67 @@ contract SandwichFactory {
     // ...이는 임시 변경한 내용을 블록체인 저장소에 저장하고자 하는 경우이다.
   }
 }
+</pre>
+
+# 함수제어자 더 알아보기
+* Internal(내부)- 함수가 정의된 Contract를 상속하는 Contract로 접근이 가능함 => Private
+* External(외부)- 함수가 컨트랙트 바깥에서만 호출될 수 있고 Contract 내의 다른 함수에 의해 호출될 수 없음 => Public
+<pre>
+contract Sandwich {
+  uint private sandwichesEaten = 0;
+
+  function eat() internal {
+    sandwichesEaten++;
+  }
+}
+
+contract BLT is Sandwich {
+  uint private baconSandwichesEaten = 0;
+
+  function eatWithBacon() public returns (string) {
+    baconSandwichesEaten++;
+    // eat 함수가 internal로 선언되었기 때문에 여기서 호출이 가능하다 
+    eat();
+  }
+}
+</pre>
+
+# 인터페이스 정의
+> 다른 Contract가 어떤 함수들을 가지고 있는 알려주는 설계도
+<pre>
+//예시 Contract
+contract LuckyNumber {
+  mapping(address => uint) numbers;
+
+  function setNum(uint _num) public {
+    numbers[msg.sender] = _num;
+  }
+
+  function getNum(address _myAddress) public view returns (uint) {
+    return numbers[_myAddress];
+  }
+}
+</pre>
+<pre>
+contract NumberInterface {
+  function getNum(address _myAddress) public view returns (uint);
+}
+//약간 다르지만, 인터페이스를 정의하는 것이 컨트랙트를 정의하는 것과 유사하다는 걸 참고
+//먼저, 다른 컨트랙트와 상호작용하고자 하는 함수만을 선언할 뿐(이 경우, getNum이 바로 그러한 함수이지) 다른 함수나 상태 변수를 언급X
+</pre>
+<pre>
+contract MyContract {
+  address NumberInterfaceAddress = 0xab38...
+  // ^ 이더리움상의 FavoriteNumber 컨트랙트 주소이다
+  NumberInterface numberContract = NumberInterface(NumberInterfaceAddress)
+  // 이제 `numberContract`는 다른 컨트랙트를 가리키고 있다.
+
+  function someFunction() public {
+    // 이제 `numberContract`가 가리키고 있는 컨트랙트에서 `getNum` 함수를 호출할 수 있다:
+    uint num = numberContract.getNum(msg.sender);
+    // ...그리고 여기서 `num`으로 무언가를 할 수 있다
+  }
+}
+//내 컨트랙트가 이더리움 블록체인상의 다른 어떤 컨트랙트와도 상호작용할 수 있음 
+//상호작용하는 함수가 public이나 external로 선언되어 있어야 함
 </pre>
