@@ -23,7 +23,7 @@
 * 블록체인 개념 공부
 * CryptoZombies로 솔리디티 실습
 
-# # 2025-04-16
+# 2025-04-16
 * U-net 논문 리뷰 및 FPN비교
 * CryptoZombies로 솔리디티 실습
 * js와 Solinity에 차이점 공부 
