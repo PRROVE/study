@@ -30,4 +30,4 @@
 
 # 2025-04-16
 * CryptoZombies로 솔리디티 실습
-* random num in smartcontract에 관한 oracle 이론 공부
+* Ethereum이론 (Oracle,Commit-Reveal,Chainlink VRF)공부 
