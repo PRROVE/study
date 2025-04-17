@@ -81,4 +81,80 @@ MiniMe mini = MiniMe(10, 20, 30);
 </pre>
 
 # 시간 단위(Time Units)
-> Solidity는 시간을 다룰 수 있는 단위계를 기본적으로 제공.
+> Solidity는 시간을 다룰 수 있는 단위계를 기본적으로 제공
+> now변수를 쓰면 혅3ㅐ의 유닉스 타임스탬프값을 얻을 수 있음
+<pre>
+uint lastUpdated;
+
+// `lastUpdated`를 `now`로 설정
+function updateTimestamp() public {
+  lastUpdated = now;
+}
+
+// 마지막으로 `updateTimestamp`가 호출된 뒤 5분이 지났으면 `true`를, 5분이 아직 지나지 않았으면 `false`를 반환
+function fiveMinutesHavePassed() public view returns (bool) {
+  return (now >= (lastUpdated + 5 minutes));
+}
+</pre>
+
+# 인수를 가지는 함수제어자
+<pre>
+// 사용자의 나이를 저장하기 위한 매핑
+mapping (uint => uint) public age;
+
+// 사용자가 특정 나이 이상인지 확인하는 제어자
+modifier olderThan(uint _age, uint _userId) {
+  require (age[_userId] >= _age);
+  _;
+}
+
+// 차를 운전하기 위햐서는 16살 이상이어야 하네(적어도 미국에서는).
+// `olderThan` 제어자를 인수와 함께 호출하려면 이렇게 하면 되네:
+function driveCar(uint _userId) public olderThan(16, _userId) {
+  // 필요한 함수 내용들
+}
+</pre>
+
+# view
+> view 함수는 사용자에 의해 외부에서 호출되었을 때 Gas를 전혀 소모하지않음
+> view 함수가 블록체인 상에서 실제로 어떤 것도 수정하지 않기 때문
+> `함수에 view 표시를 하는 것은 web3.js에 이렇게 말하는 것과 같음. "이 함수는 실행할 때 사용자의 로컬 이더리움 노드에 질의만 날리면 되고, 블록체인에 어떤 트랜잭션도 만들지 않음"(트랜잭션은 모든 개별 노드에서 실행되어야 하고, 가스를 소모함)`
+
+# 메모리에 배열 선언하기
+<pre>
+function getArray() external pure returns(uint[]) {
+  // 메모리에 길이 3의 새로운 배열을 생성한다.
+  uint[] memory values = new uint[](3);
+  // 여기에 특정한 값들을 넣는다.
+  values.push(1);
+  values.push(2);
+  values.push(3);
+  // 해당 배열을 반환한다.
+  return values;
+}
+// 가스 소모 측면에서 view(공짜) -> memory -> storage
+</pre>
+## storage
+> solinity에서 비싼 연산 중 하나인 Storage `그중에서도 쓰기연산`
+> 진짜 필요한 경우가 아니면 storage에 데이터를 쓰지 않는 것이 좋음
+
+# for 반복문
+<pre>
+//예시 짝수로 구성된 배열을 만드는 코드
+function getEvens() pure external returns(uint[]) {
+  uint[] memory evens = new uint[](5);
+  // 새로운 배열의 인덱스를 추적하는 변수
+  uint counter = 0;
+  // for 반복문에서 1부터 10까지 반복함
+  for (uint i = 1; i <= 10; i++) {
+    // `i`가 짝수라면...
+    if (i % 2 == 0) {
+      // 배열에 i를 추가함
+      evens[counter] = i;
+      // `evens`의 다음 빈 인덱스 값으로 counter를 증가시킴
+      counter++;
+    }
+  }
+  return evens;
+}
+</pre>
