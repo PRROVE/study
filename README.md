@@ -28,6 +28,9 @@
 * CryptoZombies로 솔리디티 실습
 * js와 Solinity에 차이점 공부 
 
-# 2025-04-16
+# 2025-04-17
 * CryptoZombies로 솔리디티 실습
 * Ethereum이론 (Oracle,Commit-Reveal,Chainlink VRF)공부 
+
+# 2025-04-18
+* CryptoZombies로 솔리디티 실습
