@@ -34,3 +34,4 @@
 
 # 2025-04-18
 * CryptoZombies로 솔리디티 실습
+* Ethereum Token ERC-20 공부
