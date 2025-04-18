@@ -1,7 +1,3 @@
-질문에서 다루는 주제는 **스마트 컨트랙트(Smart Contract)** 내에서 **무작위(random) 숫자를 안전하게 생성하는 방법**입니다. 이는 이더리움 스마트 컨트랙트에서 매우 중요하면서도 까다로운 문제 중 하나입니다. 아래에 내용을 정리해드릴게요.
-
----
-
 ## How can I securely generate a random number in my smart contract?
 
 #### 2025-04-17
