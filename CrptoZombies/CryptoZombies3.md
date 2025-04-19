@@ -73,3 +73,26 @@ function balanceOf(address _owner) public view returns (uint256 _balance);
 function ownerOf(uint256 _tokenId) public view returns (address _owner);
 //함수는 토큰 ID(우리의 경우에는 좀비 ID)를 받아, 이를 소유하고 있는 사람의 address를 반환
 </pre>
+
+# SafeMath
+> 오버플로우와 언더플로우를 막기위해 OpenZeppelin에서 만든 라이브러리
+* 종류
+     * add - 덧셈
+     * sub - 뺄셈
+     * mul - 곱셈
+     * div - 나눗셈
+
+## overflow
+<pre>
+uint8 number = 255;
+number++;
+
+// uint8 = 1111 1111임 여기서 1을 더하면 => 0000 0000으로 돌아감
+</pre>
+## underflow
+<pre>
+uint8 number = 0;
+number --;
+
+// uint 8 = 0000 0000임 여기서 1을 빼면 => 1111 1111으로 올라감
+</pre>
