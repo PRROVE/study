@@ -38,3 +38,6 @@
 
 # 2025-04-19
 * CryptoZombies로 솔리디티 실습
+* BlockChain 계층 이론공부
+* 합의알고리즘(PoW, PoS, DPoS, PoA)공부 
+
