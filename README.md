@@ -38,4 +38,3 @@
 
 # 2025-04-19
 * CryptoZombies로 솔리디티 실습
-* BlockChain 계층 이론공부
