@@ -24,7 +24,7 @@
 * CryptoZombies로 솔리디티 실습
 
 # 2025-04-16
-* U-net 논문 리뷰 및 FPN비교
+* U-net 논문 리뷰 CNN공부
 * CryptoZombies로 솔리디티 실습
 * js와 Solinity에 차이점 공부 
 
@@ -41,3 +41,5 @@
 * BlockChain 계층 이론공부
 * 합의알고리즘(PoW, PoS, DPoS, PoA)공부 
 
+# 2025-04-20
+* FPN, AFPN paper Review 및 공부
