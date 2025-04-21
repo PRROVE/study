@@ -43,3 +43,7 @@
 
 # 2025-04-20
 * FPN, AFPN paper Review 및 공부
+
+# 2025-04-21
+* CNN paper review 및 구조 공부
+* U-net과 FPN의 특징 추출방식을 중점으로 공부
