@@ -80,3 +80,24 @@ let person = {
 
 console.log(person.name);      // 👉 "철수"
 console.log(person["age"]);    // 👉 25
+
+// 스코프 
+// 스코프 종류 | 설명
+// 전역 스코프(Global) | 함수 밖에서 선언된 변수 → 어디서든 사용 가능
+// 지역 스코프(Local) | 함수 안에서 선언된 변수 → 그 함수 안에서만 사용 가능
+
+let globalVar = "전역";
+
+function test() {
+  let localVar = "지역";
+  console.log(globalVar); // 가능
+  console.log(localVar);  // 가능
+}
+
+console.log(globalVar); // 가능
+console.log(localVar);  // ❌ 에러! 함수 밖에서는 localVar 못 씀
+
+// 호이스팅
+var x;          // 먼저 선언만 끌어올림
+console.log(x); // undefined
+x = 5;          // 값은 나중에 할당됨

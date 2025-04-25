@@ -1,4 +1,5 @@
-document.getElementById("greetBtn").addEventListener("click",function(){
-    let name = document.getElementById("nameInput").value;
-    document.getElementById("output").innerText = "안녕하세요"  + name + "님";
+document.getElementById("printBtn").addEventListener("click",function(){
+    let hobby = document.getElementById("hobbyInput").value;
+    document.getElementById("hobbyOutput").innerText = "당신의 취미는 " + hobby + "이군요!";
 })
+
