@@ -86,3 +86,23 @@ addEventListener | "이 요소에 무언가 이벤트가 발생했을 때, 감�
 "click" | 감지할 이벤트의 종류 → 여기선 마우스 클릭
 function() { ... } | 실제 클릭됐을 때 실행할 코드를 여기에 작성
 -->
+
+<!--innerText-->
+<p id="greeting">안녕하세요!</p> //html
+document.getElementById("greeting").innerText = "반가워요!"; //js
+
+<!--innerHTML-->
+innerText는 "글자만",
+innerHTML은 HTML 태그를 포함한 구조 전체를 삽입할 수 있다.
+
+document.getElementById("fruitList").innerHTML = "<li>사과</li>";
+
+<!--사용자 입력 받고 출력하기-->
+<input id="nameInput" />
+let name = document.getElementById("nameInput").value;
+1<input id="nameInput">: 사용자 입력
+2<button id="printBtn">: 클릭 이벤트 연결
+3<p id="output">: 결과 출력
+4버튼 클릭하면:
+   input에서 .value로 입력값 가져오기
+   <p> 안 내용을 .innerText로 변경
