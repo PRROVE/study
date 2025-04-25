@@ -1,0 +1,88 @@
+<!-- HTML이란 웹 문서를 만들기 위한 MARKUP 언어
+"마크업이란" 텍스트를 정보를 덧붙여 의미를 부여하는 것
+HTML은 구조를 담당하고, 디자인은 css, js는 동작을 담당한다 -->
+
+<!DOCTYPE html> <!--문서가 HTML5로 작성되었다는 선언-->
+<html lang = "ko"> <!--문서의 loot 요소, lang="ko"는 한국어 문서임을 명시-->
+<head>             <!--눈에 보이지 않는 정보, 외부파일 연결 ,제목 등 포함-->
+    <meta charset="UTF-8"> <!--문자 인코딩 설정-->
+    <title>나의 첫 웹페이지</title>    <!--제목-->
+</head>
+<body> <!--실제 화면에 보여지는 콘텐츠를 포함-->
+    <h2>안녕하세요</h1>
+    <p>이것은 나의 첫 HTML 문서입니다.</p>
+</body>
+</html>
+
+<!-- 실무에서 자주 쓰이는 태그 -->
+
+<!--텍스트 관련
+<h1> ~ <h6>: 제목 (검색엔진 SEO에도 중요)
+<p>: 문단
+<br>: 줄바꿈 (문단 아님)
+<strong>, <em>: 강조 (볼드, 이탤릭 역할도 있음)
+
+링크와 이미지
+<a href="URL" target="_blank">: 링크 (_blank는 새창 열기)
+<img src="경로" alt="대체 텍스트">: 이미지 (alt는 이미지 로딩 실패 시 설명 제공)
+
+목록
+<ul>: 순서 없는 리스트 (●)
+<ol>: 순서 있는 리스트 (1., 2., 3.)
+<li>: 리스트 항목
+
+레이아웃
+<div>: 블록 단위 구역. CSS와 자바스크립트 제어에 자주 사용
+<span>: 인라인 구역. 문장 중 특정 부분 스타일 적용 시 유용
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>나의 첫 웹페이지</title>
+</head>
+<body>
+  <h1>👋 안녕하세요! 저를 소개합니다</h1>
+
+  <img src="C:\Users\KOREA\Desktop\자료\증명사진.jpg" alt="내 사진" />
+
+  <h2>🙋 기본 정보</h2>
+  <ul>
+    <li>이름: 윤관</li>
+    <li>나이: 26세</li>
+    <li>직업: 개발자 지망생</li>
+  </ul>
+
+  <h2>💬 자기소개</h2>
+  <p>안녕하세요! 저는 블록체인 개발자가 되고 싶은 사람입니다. HTML을 배우는 중이에요.</p>
+
+  <h2>📎 나의 링크</h2>
+  <p><a href="https://github.com/" target="_blank">GitHub 바로가기</a></p>
+</body>
+</html>
+
+<!--DOM이란 HTML문서를 자바스크립트가 조작할 수 있게 만든 구조-->
+<h1>안녕</h1>
+<p>이건 문단입니다.</p>
+<!-- js에서는 이렇게 접근함-->
+document.querySelector("h1");
+
+<!-- HTML 요소 선택하는 방법 -->
+document.getElementById("id") | ID로 요소 선택
+document.querySelector("선택자") | CSS처럼 선택
+document.querySelectorAll("선택자") | 여러 개 선택 (배열형태)
+
+<!-- 이벤트 -->
+document.getElementById("myBtn").addEventListener("click", function() {
+    alert("버튼이 눌렸어요!");
+  });
+  
+<!--
+document: 현재 웹페이지 전체
+getElementById("myBtn"): 그 안에서 "myBtn"이라는 id를 가진 요소를 찾아
+button: 그걸 변수에 저장해서 나중에 클릭 이벤트 연결 등에 사용
+addEventListener | "이 요소에 무언가 이벤트가 발생했을 때, 감지해서 반응해줘" 라는 기능
+"click" | 감지할 이벤트의 종류 → 여기선 마우스 클릭
+function() { ... } | 실제 클릭됐을 때 실행할 코드를 여기에 작성
+-->

@@ -33,3 +33,50 @@ var last = 'Lee';
 
 console.log('My name is '+ first +' '+last+'.');
 //python 처럼 문자열에 +해서 출력 가능
+
+//조건문
+if (age >= 19) {
+  console.log("성인입니다.");
+  // 조건이 참일 때 실행할 코드
+} else {
+  console.log("미성년자입니다.");
+}
+
+//반복문
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+  }
+  
+//함수  
+function sayHello() {
+  console.log("안녕하세요!");
+}
+
+sayHello(); // 함수 실행
+ 
+//리턴
+function add(a, b) {
+    return a + b;
+  }
+  
+  let result = add(3, 5); // 👉 8
+  console.log(result);
+
+//배열
+let fruits = ["사과", "바나나", "포도"];
+
+console.log(fruits[0]); // 👉 "사과"
+console.log(fruits[2]); // 👉 "포도"
+
+fruits.push("오렌지");     // 뒤에 추가
+fruits.pop();              // 마지막 제거
+
+//객체
+let person = {
+    name: "철수",
+    age: 25,
+    isStudent: true
+  };
+
+console.log(person.name);      // 👉 "철수"
+console.log(person["age"]);    // 👉 25
