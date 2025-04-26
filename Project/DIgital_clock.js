@@ -6,6 +6,9 @@ timeid = setInterval(function(){
     let now = new Date();
     let dayIndex = now.getDay(); 
     let dayName = days[dayIndex];
+    let year = now.getFullYear();
+    let month = String(now.getMonth() + 1).padStart(2,"0");
+    let day = String(now.getDate()).padStart(2,"0");
     let hour = now.getHours();
     let min = String(now.getMinutes()).padStart(2, "0");
     let sec = String(now.getSeconds()).padStart(2, "0");
@@ -23,5 +26,6 @@ timeid = setInterval(function(){
         hour = hour - 12;
     }
     hour = String(hour).padStart(2, "0");
+    document.getElementById("Year").innerText= year + "." + month + "." + day;
     document.getElementById("Clock").innerText = period + " " + hour + ":" + min + ":" + sec + "(" + dayName + ")";
 }, 1000)
