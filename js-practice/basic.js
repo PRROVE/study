@@ -134,3 +134,93 @@ setTimeout(function() {
 
 console.log("3번 작업");
 // 1번작업 -> 3번작업 -> 2번작업(3초뒤에 출력)
+
+// 화살표 함수
+// 기존 함수 선언보다 훨씬 간단하게 짧게 쓸 수 있는 방법
+const add = (a, b) => {
+  return a + b;
+}
+
+//더 간단하게
+const add = (a, b) => a + b;
+
+// 구조 분해 할당(Desturcturing)
+// 객체나 배열에서 필요한 값을 한번에 뽑아내는 문법
+let arr = [1, 2, 3];
+let [a, b, c] = arr;
+
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // 3
+
+// spread 와 Rest
+// spread 배열이나 객체를 펼칠 때 사용
+let arr = [1, 2, 3];
+let newArr = [...arr, 4, 5];
+
+console.log(newArr); 
+// [1, 2, 3, 4, 5]
+
+// Rest 나머지 값들을 모아서 배열로 만듦
+let [a, ...rest] = [1, 2, 3, 4];
+
+console.log(a);    // 1
+console.log(rest); // [2, 3, 4]
+
+//map & filter
+// map 배열의 모든 요소를 변형해서 새로운 배열 만들기
+let numbers = [1, 2, 3];
+
+let doubled = numbers.map(num => num * 2);
+
+console.log(doubled); 
+// [2, 4, 6]
+
+// filter 배열에서 조건을 만족하는 요소만 골라서 새로운 배열 만들기
+let numbers = [1, 2, 3, 4, 5];
+
+let evens = numbers.filter(num => num % 2 === 0);
+
+console.log(evens); 
+// [2, 4]
+
+// 콜백 함수
+function greet(name) {
+    console.log("안녕하세요, " + name + "님!");
+  }
+  
+function processUserInput(a) {
+    let name = "철수";
+    a(name); // 넘겨받은 함수를 호출하면서 name을 전달
+}
+  
+processUserInput(greet);
+  
+// Promise 
+// 비동기 작업이 끝난 뒤에 결과를 "약속"하는 객체
+let promise = new Promise(function(resolve, reject) {
+  // 작업이 성공하면
+  resolve("성공!");
+
+  // 작업이 실패하면
+  reject("실패!");
+});
+
+promise.then(function(result) {
+  console.log(result); // "성공!" 출력
+}).catch(function(error) {
+  console.log(error); // 실패했을 때 에러 출력
+});
+
+// async & await 
+//async 키워드를 함수 앞에 붙인다.
+//await 키워드를 비동기 작업 앞에 붙인다.
+async function work() {
+  let result = await new Promise((resolve) => {
+    setTimeout(() => resolve("작업 완료!"), 1000);
+  });
+
+  console.log(result); 
+}
+
+work();
