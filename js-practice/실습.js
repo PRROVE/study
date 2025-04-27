@@ -84,12 +84,213 @@
 // }
 // fail();
 
-let promise = new Promise(function(resolve, reject){
-    let random_num= Math.random(); // 0~1 사이의 랜덤 숫자
-    if (random_num >= 0.5) {
-        resolve("성공!");
-    } else {
-        reject("실패!");
-    }
+// let promise = new Promise(function(resolve, reject){
+//     let random_num= Math.random(); 
+//     if (random_num >= 0.5) {
+//         resolve("성공!");
+//     } else {
+//         reject("실패!");
+//     }
 
-})
+// });
+// async function run() {
+//     try{
+//         let result = await promise;
+//         console.log(result);
+//     }
+//     catch(e){
+//         console.log(e);
+//     }
+// }
+
+// run();
+
+// let promise = new Promise(function(resolve, reject){
+//     let random_num = Math.random();
+//     if (random_num >=0.7)
+//     {
+//         resolve("대성공");
+//     }
+//     else if(random_num >= 0.3){
+//         resolve("성공");
+//     }
+//     else
+//     {
+//         reject("실패");
+//     }
+// });
+
+// async function run() {  
+//     try{
+//         let result = await promise;
+//         console.log(result);
+//     }    
+//     catch(error)
+//     {
+//         console.log(error);
+//     }
+// }
+// run();
+
+// async function getData() {
+//     try {
+//         let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+//         let data = await response.json();
+//         console.log(data);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// getData();
+
+// fetch("https://jsonplaceholder.typicode.com/posts/2")
+// .then(response => response.json())
+// .then(data => console.log(data))
+// .catch(error => console.log(error));
+
+
+// fetch("https://jsonplaceholder.typicode.com/posts",{
+//     method : "POST",
+//     headers: {"Content-Type" : "application/json"},
+//     body: JSON.stringify({
+//       title:"POST 요청 연습",
+//       body:"지금 우리는 POST 요청을 배우고 있다!",
+//       userId:123
+//     })
+//   })
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+//   .catch(error => console.log(error));
+
+// async function run(){
+//     try{
+//         let response = await fetch("https://jsonplaceholder.typicode.com/posts",{
+//             method : "POST",
+//             headers: {"Content-Type" : "application/json"},
+//             body: JSON.stringify({
+//                     title : "POST 요청연습",
+//                     body : "지금 우리는 POST 요청을 배우고 있다!",
+//                     userId: 123
+//                 })
+//         });
+//         let data = await response.json();
+//         console.log(data);
+//     }catch(error){
+//         console.log(error);
+//     }
+    
+// }
+// run();
+
+// async function respons(){
+//     try{
+//         let response = await fetch("https://jsonplaceholder.typicode.com/posts",{
+//             method : "POST",
+//             headers:{"Content-Type":"application/json"},
+//             body: JSON.stringify({  
+//                 title: "심화 문제 작성",
+//                 body: "POST 요청을 자유자재로 다룬다!",
+//                 userId: 456})
+//         });
+//         let data = await response.json();
+//         console.log(data.id);
+//     }
+//     catch(e){
+//         console.log(e);
+//     }
+// }
+// respons();
+
+// async function send(){
+//     try{
+//         let respsonse = await fetch("https://jsonplaceholder.typicode.com/posts",{
+//             method : "POST",
+//             headers: {"Content-Type":"application/json"},
+//             body:JSON.stringify({
+//                 title: "HTML 연동 심화 문제",
+//                 body: "버튼 클릭으로 POST 요청을 보냈다!",
+//                 userId: 789
+//             })
+//         });
+//         let data = await respsonse.json();
+//         document.getElementById("result").innerText = data.title;
+
+//     }catch(e){
+//         console.log(e);
+//     }
+// }
+// document.getElementById("sendBtn").addEventListener("click", send);
+
+// async function send(){
+//     try{
+//         let response_1 = await fetch("https://jsonplaceholder.typicode.com/posts",{
+//             method : "POST",
+//             headers: {"Content-Type" : "application/json"},
+//             body: JSON.stringify({
+//                 title: "첫 번째 요청입니다",
+//                 body: "첫 번째 요청 내용입니다",
+//                 userId: 1
+//             })
+//         });
+//         let data_1 = await response_1.json();
+//         console.log(data_1.title);
+
+//         let response_2 = await fetch("https://jsonplaceholder.typicode.com/posts",{
+//             method : "POST",
+//             headers: {"Content-Type": "application/json"},
+//             body: JSON.stringify({
+//                 title: "두 번째 요청입니다",
+//                 body: "두 번째 요청 내용입니다",
+//                 userId: 2
+//             })
+//         });
+//         let data_2 = await response_2.json();
+//         console.log(data_2.title);
+//     }catch(error){
+//         console.log(error);
+//     }
+// }
+// send();
+
+async function PostData(title, body ,userId) {
+    try{
+        let response = await fetch("https://jsonplaceholder.typicode.com/posts",{
+            method : "POST",
+            headers: {"Content-Type": "application/json"},
+            body:JSON.stringify({title,body,userId})
+    
+        });
+        if(!response.ok){
+            throw new Error(`요청실패! 상태 코드: ${response.status}`);
+        }
+    
+        let data = await response.json();
+        return data;
+    }
+    catch(error){
+        console.log("PostData 함수 내부 에러:",error.messgae);
+    }
+}
+
+async function send(){
+    try{
+        const data = await Promise.all([
+            PostData("첫 번째 요청입니다","첫 번재 요청 내용입니다.",1),
+            PostData("두 번째 요청입니다", "두 번째 요청 내용입니다", 2)
+        ])
+        
+        data.forEach((b, index)=> {
+            console.log(`${index + 1}번째 요청 결과:`, b.title);
+        })
+        // let data1 = await PostData("첫 번째 요청입니다","첫 번재 요청 내용입니다.",1);
+        // console.log("첫 번째 요청 결과:",data1.title);
+        // let data2 = await PostData("두 번째 요청입니다", "두 번째 요청 내용입니다", 2);
+        // console.log("두 번째 요청 결과:", data2.title);
+
+    } catch (error) {
+        console.log("send 함수 에러:", error.message);
+    }
+}
+
+send();
