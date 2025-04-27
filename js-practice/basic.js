@@ -224,3 +224,29 @@ async function work() {
 }
 
 work();
+
+// fetch()로 서버데이터 불러오기
+// "fetch()"는 서버에 요청(Request)을 보내고, 응답(Response)을 받아오는 함수
+
+//기본 형태
+fetch(요청할_주소)
+  .then(response => response.json()) // 응답을 JSON 데이터로 변환
+  .then(data => console.log(data))    // 변환된 데이터 출력
+  .catch(error => console.log(error)); // 에러 처리
+
+// POST는 서버로 "새로운 데이터"를 보낼 때 사용하는 HTTP 메소드
+//기본 형태
+fetch(요청할_주소, {
+  method: "POST",            // 1. 요청 방식을 POST로
+  headers: {                 // 2. 보낼 데이터의 타입을 명시
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({     // 3. 보낼 데이터 (JSON 문자열로 변환)
+    key1: "value1",
+    key2: "value2"
+  })
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.log(error));
+
