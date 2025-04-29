@@ -253,44 +253,70 @@
 // }
 // send();
 
-async function PostData(title, body ,userId) {
-    try{
-        let response = await fetch("https://jsonplaceholder.typicode.com/posts",{
-            method : "POST",
-            headers: {"Content-Type": "application/json"},
-            body:JSON.stringify({title,body,userId})
+// async function PostData(title, body ,userId) {
+//     try{
+//         let response = await fetch("https://jsonplaceholder.typicode.com/posts",{
+//             method : "POST",
+//             headers: {"Content-Type": "application/json"},
+//             body:JSON.stringify({title,body,userId})
     
-        });
-        if(!response.ok){
-            throw new Error(`요청실패! 상태 코드: ${response.status}`);
-        }
+//         });
+//         if(!response.ok){
+//             throw new Error(`요청실패! 상태 코드: ${response.status}`);
+//         }
     
-        let data = await response.json();
-        return data;
-    }
-    catch(error){
-        console.log("PostData 함수 내부 에러:",error.messgae);
-    }
-}
+//         let data = await response.json();
+//         return data;
+//     }
+//     catch(error){
+//         console.log("PostData 함수 내부 에러:",error.messgae);
+//     }
+// }
 
-async function send(){
-    try{
-        const data = await Promise.all([
-            PostData("첫 번째 요청입니다","첫 번재 요청 내용입니다.",1),
-            PostData("두 번째 요청입니다", "두 번째 요청 내용입니다", 2)
-        ])
+// async function send(){
+//     try{
+//         const data = await Promise.all([
+//             PostData("첫 번째 요청입니다","첫 번재 요청 내용입니다.",1),
+//             PostData("두 번째 요청입니다", "두 번째 요청 내용입니다", 2)
+//         ])
         
-        data.forEach((b, index)=> {
-            console.log(`${index + 1}번째 요청 결과:`, b.title);
-        })
-        // let data1 = await PostData("첫 번째 요청입니다","첫 번재 요청 내용입니다.",1);
-        // console.log("첫 번째 요청 결과:",data1.title);
-        // let data2 = await PostData("두 번째 요청입니다", "두 번째 요청 내용입니다", 2);
-        // console.log("두 번째 요청 결과:", data2.title);
+//         data.forEach((b, index)=> {
+//             console.log(`${index + 1}번째 요청 결과:`, b.title);
+//         })
+//         // let data1 = await PostData("첫 번째 요청입니다","첫 번재 요청 내용입니다.",1);
+//         // console.log("첫 번째 요청 결과:",data1.title);
+//         // let data2 = await PostData("두 번째 요청입니다", "두 번째 요청 내용입니다", 2);
+//         // console.log("두 번째 요청 결과:", data2.title);
+
+//     } catch (error) {
+//         console.log("send 함수 에러:", error.message);
+//     }
+// }
+
+// send();
+
+
+document.getElementById("fetchBtn").addEventListener("click", async function() {
+    try {
+        // 1. 외부 API로 GET 요청
+        const response = await fetch("https://jsonplaceholder.typicode.com/users");
+
+        // 2. 응답을 JSON 데이터로 변환
+        const users = await response.json();
+
+        // 3. ul 요소 가져오기
+        const userList = document.getElementById("userList");
+        userList.innerHTML = ""; // (기존 리스트 비우기)
+
+        // 4. 받아온 사용자 중 5명만 출력
+        users.slice(0, 5).forEach(user => {
+            const li = document.createElement("li"); // li 태그 생성
+            li.innerText = user.name;               // li에 이름 넣기
+            userList.appendChild(li);               // ul에 추가하기
+        });
 
     } catch (error) {
-        console.log("send 함수 에러:", error.message);
+        // 5. 에러 발생 시
+        console.log("에러 발생:", error.message);
     }
-}
-
-send();
+});
