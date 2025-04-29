@@ -250,3 +250,24 @@ fetch(요청할_주소, {
 .then(data => console.log(data))
 .catch(error => console.log(error));
 
+// 외부 API서버에서 데이터를 가져오기(GET요청)
+// 외부 API = 내 서버가 아니라, 다른 곳에 있는 서버다.
+// API = 다른 서버가 제공하는 "정보"를 가져오는 통로
+//      블로그 글 목록, 사용자 정보등
+
+// GET요청 = 서버에 데이터를 보내는 것이 아닌 나한테 데이터를 좀 줘라고 요청하는 것
+// fetch("https://jsonplaceholder.typicode.com/posts")
+// .then(response => response.json())
+//  .then(data => console.log(data))
+//  .catch(error => console.log(error));
+
+// async function fetchData() {
+//   try {
+//       const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+//       const data = await response.json();
+//       console.log(data);
+//   } catch (error) {
+//       console.log("에러 발생:", error.message);
+//   }
+// }
+
