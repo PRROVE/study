@@ -320,3 +320,23 @@ document.getElementById("fetchBtn").addEventListener("click", async function() {
         console.log("에러 발생:", error.message);
     }
 });
+
+
+async function send() {
+    try{
+        let response = await fetch("https://jsonplaceholder.typicode.com/posts",{
+            method : "POST",
+            headers: {"Content-Type":"application/json"},
+            body:JSON.stringify({
+                "title": "연습 문제입니다",
+                "body": "지금은 POST 요청을 실습 중입니다.",
+                "userId": 1
+            })
+        });
+        let data = await response.json();
+        console.log(data);
+    }catch(error){
+        console.log("잘못된 데이터 입니다.",error);
+    }
+    
+}
