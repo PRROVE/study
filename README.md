@@ -70,3 +70,12 @@
 * API에서 데이터 불러오기
      * append & appendChild로 추가하는 실습
      * 데이터를 불러온 후 새로운 li만들고 값을 넣어주는 실습
+
+# 2025-04-30
+* Block_Chain 클론코딩 환경설정
+
+# 2025-05-01
+## Project1
+* twitter_clone_coding
+     * Contract만들기 및 Gas를 활용한 Wallet address받기
+     * Secret key를 이용해서 Smart Contract 등록 및 배포
