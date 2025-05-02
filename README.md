@@ -79,3 +79,10 @@
 * twitter_clone_coding
      * Contract만들기 및 Gas를 활용한 Wallet address받기
      * Secret key를 이용해서 Smart Contract 등록 및 배포
+
+# 2025-05-02
+## Project1
+* twitter_clone_coding
+     * button을 만들고 update내용을 작성할 수 있게 만듬
+     * html로 왼쪽 지갑주소와 계정로그아웃을 만듬
+     * tashmaskwallet, metawallet등 다양한 계정연동을 기능을 만듬
