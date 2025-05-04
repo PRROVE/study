@@ -75,20 +75,20 @@
 * Block_Chain 클론코딩 환경설정
 
 # 2025-05-01
-## Project1
+## Clone_coding
 * twitter_clone_coding
      * Contract만들기 및 Gas를 활용한 Wallet address받기
      * Secret key를 이용해서 Smart Contract 등록 및 배포
 
 # 2025-05-02
-## Project1
+## Clone_coding
 * twitter_clone_coding
      * button을 만들고 update내용을 작성할 수 있게 만듬
      * html로 왼쪽 지갑주소와 계정로그아웃을 만듬
      * tashmaskwallet, metawallet등 다양한 계정연동을 기능을 만듬
 
 # 2025-05-03
-## Project1 
+## Clone_coding 
 * twitter_clone_coding
      * 기존에 만들었던걸 가지고 css를 활용해서 layout 구성
      * Web3button을 통해 web3기능 사용
@@ -96,7 +96,7 @@
          * 업데이트한 상태 메시지를 블록체인에 등록할 수 있는 기능
      
 # 2025-05-04
-## Project1 
+## Clone_coding 
 * twitter_clone_coding
      * 블록 체인에 기록된 상태 메시지가 피드로 나타나게 레이아웃을 만듬
           * 레이아웃에서 누가 보낸 Status인지 확인하기 위해 주소와 일자를 표시해놓음
