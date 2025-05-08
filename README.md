@@ -102,4 +102,26 @@
           * 레이아웃에서 누가 보낸 Status인지 확인하기 위해 주소와 일자를 표시해놓음
      * metamask뿐만 아니라 다른 지갑을 이용해서 Feed를 작성해도 Status에 Feed가 보이게 layout 구성
 
+# 2025-05-05
+* null...
 
+# 2025-05-06
+* null...
+
+# 2025-05-07
+## Project
+* RPPG with BlockChain
+    * web
+       * UI 및 TS
+       * webcam기능 
+    * Blckchain
+       * 자료들을 전부 smart contract로 저장
+       * 허가한 주소 사용자는 데이터에 접근 가능하게 만듬
+
+# 2025-05-08
+## Project
+* RPPG with BlockChain
+    * React와 TS를 사용함
+       * 웹 스크롤 기능
+       * 이미지 및 제목 상단
+       * webcam 기능 구현
