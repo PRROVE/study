@@ -126,15 +126,11 @@
        * 이미지 및 제목 상단
        * webcam 기능 구현
 
-# 2025-05-08
+# 2025-05-09
 ## Project
 * RPPG with BlockChain
     * css 생성 및 이미지 적용
     * webcam test
-
-# 2025-05-09
-## Project
-* RPPG with BlockChain
     * contract시스템 build
         * 특정 인물들이 정보에 관해서 접근가능한 시스템
     * metamask 로그인 구축
@@ -144,7 +140,7 @@
 * RPPG with BlockChain
     * metamask 버튼 생성 및 css 적용
         * metamask Button이 반응하지않는 Onclick 에러 발생
-        * Onclick을 해결하면 기존의 Button이 반응하지않음
+        * Onclick을 해결하면 기존의 Button이 반응하지않는 이슈
 
 # 2025-05-11
 *  None...
@@ -154,5 +150,5 @@
 * RPPG with BlockChain
     * Onclick 에러수정 -> eventlistener형태로 바꿈
     * metamask 이외에도 coinwallet등 다른 wallet 추가
-        * metamask와 coinwallet등 한번애 로그인하는 이슈 발생
+        * metamask와 coinwallet등 한번에 로그인하는 이슈 발생
         * onclick으로 구조 재변경
