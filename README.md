@@ -140,7 +140,7 @@
 * RPPG with BlockChain
     * metamask 버튼 생성 및 css 적용
         * metamask Button이 반응하지않는 Onclick 에러 발생
-        * Onclick을 해결하면 기존의 Button이 반응하지않는 이슈
+        * Onclick을 해결하면 기존의 Button이 반응하지않는 issue
 
 # 2025-05-11
 *  None...
@@ -150,5 +150,38 @@
 * RPPG with BlockChain
     * Onclick 에러수정 -> eventlistener형태로 바꿈
     * metamask 이외에도 coinwallet등 다른 wallet 추가
-        * metamask와 coinwallet등 한번에 로그인하는 이슈 발생
+        * metamask와 coinwallet등 한번에 로그인하는 issue 발생
         * onclick으로 구조 재변경
+
+# 2025-05-13
+## Project
+* RPPG with BlockChain
+    * Contract 시스템 Contract send button과 연결 후 First Test
+        * WebCam기능 문제없음
+        * Login & out 기능 문제없음
+        * Contract data가 넘어가지 않는 이슈
+        * byte32 또는 데이터가 문자열로 반환되지않는 문제라고 생각됌
+
+# 2025-05-14
+## Project 
+* RPPG with BlockChain
+    * Contract data가 넘어가지 않는 issue 수정
+        * byte32로 바꿔서 데이터를 넘김(데이터가 문제없이 넘어가나 현재는 더미 데이터기에 차후에 모델 데이터를 정확히 받아서 수정해야함)
+
+# 2025-05-15
+## Project
+* RPPG with BlockChain 
+    * Authorized Data Access 버튼 구현
+        * Contract send에서 한 Contract를 특정 허가된 인물이 데이터를 요구하면 데이터를 넘겨주는 버튼
+        * 어떤 기준에서 승인된 wallet address를 가진 사람이 승인되는지 정확하지 못한 issue
+            * 명확한 기준으로 required를 사용해서 수정해 볼 필요가 있다고 생각함(2025-05-16 수정X)
+
+# 2025-05-16
+## Project
+* RPPG with BlockChain
+    * CNN+LSTM 모델을 백그라운드 웹에 적용시키는 Test
+        * 백그라운드 환경에서 돌아갈 수 없는 issue
+            * Gui환경문제
+            * tensorflow구현이 안되어있음
+            * 모델 자체가 LLM상위 모델 급으로 무거움
+            * --> 모델 자체를 경령화 시키면서 tensorflow로 layer세분화가 필요
