@@ -185,3 +185,12 @@
             * tensorflow구현이 안되어있음
             * 모델 자체가 LLM상위 모델 급으로 무거움
             * --> 모델 자체를 경령화 시키면서 tensorflow로 layer세분화가 필요
+
+# 2025-05-17
+## Project
+* Rppg with Block Chain
+    * Authorized Data Access버튼 관련 추가적인 진행
+        * 어떤 기준에서 승인된 wallet address를 가진 사람이 승인되는지 정확하지 못한 issue
+            * require을 통해 msg.sender와 contract를 한 주소가 같으면 인증된 사용자라는걸 기준을 추가함
+            * Contract send를 누르지않으면 호출되지 버튼을 누를 수 없는 issue
+                * Doctor & 보험관련 사용자 Address를 더미 형식으로 만들어서 인증자라고 적용시킬예정
