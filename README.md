@@ -194,3 +194,22 @@
             * require을 통해 msg.sender와 contract를 한 주소가 같으면 인증된 사용자라는걸 기준을 추가함
             * Contract send를 누르지않으면 호출되지 버튼을 누를 수 없는 issue
                 * Doctor & 보험관련 사용자 Address를 더미 형식으로 만들어서 인증자라고 적용시킬예정
+
+# 2025-05-18
+## Project
+* Rppg with Block Chain
+    * Contract send를 누르지않으면 호출되지 버튼을 누를 수 없는 issue 보완
+        * msg.sender가 Abi오류로 인해서 불러와지지 않는 문제를 해결
+            * Remix를 통해서 RppgContract.sol배포후 address 보완 및 Abi해결
+    * Authorized Data Access버튼 관련 추가적인 진행
+        * 불러온 데이터를 web에 Data table로 나타냄     
+    * 리펙토링
+        * Wallet,Access로 나눔
+            * 리펙토링 과정에서 format issue
+                * toBytes32을 정확환 형식으로 변환되지 않아서 문자열을 정확하게 변환하기 위해서 format.ts추가
+          * Doctor 인증자에게 정확한 주소를 캐치하지 못해서 데이터를 불러오지 못하는 issue
+            * msg.sender와 user.address를 구분하지 못한다고 판단
+                * Doctor 인증자를 제외 시키고 user.address == user.address를 시켜서 확인
+                  * Data table이 나타남(다른식으로 인증자 주소를 추가시켜야할 거 같음(2025-05-18 issue)) 
+            * metamask만 로그인되는 현상 --> metamask빼고 wallet delete
+                * another metamask address를 추가한 후 확인할 예정
