@@ -213,3 +213,12 @@
                   * Data table이 나타남(다른식으로 인증자 주소를 추가시켜야할 거 같음(2025-05-18 issue)) 
             * metamask만 로그인되는 현상 --> metamask빼고 wallet delete
                 * another metamask address를 추가한 후 확인할 예정
+
+
+# 2025-05-18
+## Project
+* Rppg with Block Chain
+    * whiteList구축
+        * 기존에는 contract하면서 constructor로 인증된 사용자 등록 -> 허가 Address를 추가하기 위해서는 매번 새로운 contract를 생성해야함
+        * contract내에 whitelistarray를 만들고 계정에 한해서 최초로 Doctor인지 아니면 User인지 판별한 후 WhiteListArray에 추가함
+        * --> 매번 contract에 Deploy를 통해서 Access Address를 추가할 필요 없이 contract내에 저장이 됨으로 관리가 쉬워짐
