@@ -232,9 +232,9 @@
             * User array를 만들어 버튼을 누르게 되면 User Array 데이터가 넘어가게 변경
     * 리펙토링
         * 목적: 코드의 렌더링을 빠르게 하기위해 hook, util, components로 분리
-            * hook = Use(Wallet, Role, AuthorizedAccess)
+            * hook = Use(Wallet, Role, Access)
             * util = format
-            * components = BioDataTable, DoctorRegistrationForm, WebcamPreview
+            * components = BioData, DoctorForm, Webcam
             * Css -> Scss로 변경
     * 2025-05-18 Doctor Address로 로그인한 후 Data table이 안없어지는 issue
         * 로그아웃 or 계정 변경 시에 table초기화 인증상태 초기화로 폼을 숨기는걸로 해결
