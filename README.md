@@ -215,10 +215,32 @@
                 * another metamask address를 추가한 후 확인할 예정
 
 
-# 2025-05-18
+# 2025-05-19
 ## Project
 * Rppg with Block Chain
     * whiteList구축
         * 기존에는 contract하면서 constructor로 인증된 사용자 등록 -> 허가 Address를 추가하기 위해서는 매번 새로운 contract를 생성해야함
-        * contract내에 whitelistarray를 만들고 계정에 한해서 최초로 Doctor인지 아니면 User인지 판별한 후 WhiteListArray에 추가함
         * --> 매번 contract에 Deploy를 통해서 Access Address를 추가할 필요 없이 contract내에 저장이 됨으로 관리가 쉬워짐
+        * contract내에 whitelistarray를 만들고 계정에 한해서 최초로 Doctor인지 아니면 User인지 판별한 후 WhiteListArray에 추가함
+          * 판별은 최초 계정 등록시 Doctor 버튼과 user버튼을 통해서 whitelist에 등록이 됌 
+
+# 2025-05-20
+## Project
+* Rppg with Block Chain
+    * whiteList구축2
+        * Authorized Data Access 버튼을 눌렀을때 Doctor이용자면 User의 모든 데이터가 나와야하는데 하나만 나오는 issue
+            * User array를 만들어 버튼을 누르게 되면 User Array 데이터가 넘어가게 변경
+    * 리펙토링
+        * 목적: 코드의 렌더링을 빠르게 하기위해 hook, util, components로 분리
+            * hook = Use(Wallet, Role, AuthorizedAccess)
+            * util = format
+            * components = BioDataTable, DoctorRegistrationForm, WebcamPreview
+            * Css -> Scss로 변경
+    * 2025-05-18 Doctor Address로 로그인한 후 Data table이 안없어지는 issue
+        * 로그아웃 or 계정 변경 시에 table초기화 인증상태 초기화로 폼을 숨기는걸로 해결
+    * Update 예정
+        * FaceMash
+        * 모델적용
+        * ERC20 시스템 구축
+        * 인증시스템 구체화
+        * issue 해결 최우선
