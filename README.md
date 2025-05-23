@@ -244,3 +244,33 @@
         * ERC20 시스템 구축
         * 인증시스템 구체화
         * issue 해결 최우선
+
+# 2025-05-21
+## Project
+* Rppg with Block Chain
+    * WebCam Update
+        * Opensource에서 Facemash에 대한 코드를 얻어서 적용 Videoref에 적용
+            * 눈과 눈썹, 입을 강조화 시킨 facemash
+        
+# 2025-05-22
+## Project
+* Rppg with Block Chain
+    * cnn모델을 로직으로 변경
+        * py기반의 cnn모델을 opencv로 백그라운드에서 돌리면 랜더링도 느리지만 실시간으로 정보를 받는 것 조차도 쉽지않음
+        * React + ts 기반의 단순 로직으로 변경 후 Webcam에 적용
+    * Facemash를 이용한 Role, yaw, Pitch, EAR 로직 적용 및 시각화
+        * Pitch - 상하 기울기
+        * Yaw - 좌우 기울기
+        * Role - 고개 돌아간 정도
+        * EAR - 눈 깜빡임 감지
+        * Score(시각화) - 0% ~ 100% 나타낸 졸음정도
+    * Facemash를 이용한 Role, yaw, Pitch 정보 습득 로직 issue (2025-05-22)
+        * accuracy issue
+            * Yaw - 이마 ~ 턱으로 시작한 랜드마크를 바탕으로 좌우에 대한 각도를 알아내는데 90도로 꺾여있어도 45도쯤 된다고 추측함
+            * Pitch - 귀 ~ 코 ~ 귀로 이어지는 랜드마크를 바탕으로 상하에 대한 기울기 정도를 알아내는데 90도부터 시작함
+        *  Result issue
+            * Score - EAR + Yaw + Pitch + Role을 합산하여 얼마나 피곤한지 나타내는 변수인데 정확도 이슈로 인한 정확한 합산이 나오지않음
+
+# 2025-05-23
+* None...
+        
