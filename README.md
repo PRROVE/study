@@ -273,4 +273,32 @@
 
 # 2025-05-23
 * None...
-        
+
+# 2025-05-24
+## Project
+* Rppg with Block Chain
+    * All Test 
+        * Webcam 정삭작동 유무
+        * EAR 및 Roll, Pitch, Yaw 실시간 수치 유무
+        * Contract 및 Access 버튼 작동 유무
+        * 전체적으로 문제는 없으니 랜더링이 너무 느리며 로직 정확도 issue는 여전함 (로직의 한계)
+    * 리펙토링
+        * 목적 : 구조파악을 쉽게하기 위함이며 랜더링을 조금이라도 빨리하기 위해서 랜더와 비동기를 분리하기 위함
+        * src
+            * index.tsx
+            * App.tsx
+                * table을 비동기로 처리해놔서 불러오는데 버튼을 누르고 5초정도 걸림(자동호출로 불러와서 느리다고 판단)
+                    * 페이지 렌더와 테이블 비동기를 분리하고 별도로 state를 저장한 후 불러오게 변경
+                    * 랜더링 속도 향상
+            * abi
+            * components
+            * hooks
+            * image
+            * styles
+                * css -> scss로 변경
+                * css코드가 너무 길며 인스턴스화 시켜 관리를 쉽게하기 위함
+            * utils
+            * format
+
+# 2025-05-25
+* None...
