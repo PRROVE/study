@@ -33,33 +33,33 @@
 
 # 2025-04-14 (월)
 
-> 솔리디티 실습 시작
+> Solidity 실습 시작
 
 ### 공부
 - js 기본 구문 및 예제학습
 - 블록체인 개념 공부
-- CryptoZombies로 솔리디티 실습
+- CryptoZombies로 Solidity 실습
 
 ---
 
 # 2025-04-15 (화)
 
-> JS + HTML 이론, 솔리디티 실습 병행
+> JS + HTML 이론, Solidity 실습 병행
 
 ### 공부
 - js 기본을 이용한 HTML 이론 공부
 - 블록체인 개념 공부
-- CryptoZombies로 솔리디티 실습
+- CryptoZombies로 Solidity 실습
 
 ---
 
 # 2025-04-16 (수)
 
-> CNN 논문 리뷰 및 솔리디티 실습
+> CNN 논문 리뷰 및 Solidity 실습
 
 ### 공부
 - U-net 논문 리뷰 CNN공부
-- CryptoZombies로 솔리디티 실습
+- CryptoZombies로 Solidity 실습
 - js와 Solinity에 차이점 공부
 
 ---
@@ -69,7 +69,7 @@
 > 이더리움 고급 개념 학습
 
 ### 공부
-- CryptoZombies로 솔리디티 실습
+- CryptoZombies로 Solidity 실습
 - Ethereum이론 (Oracle,Commit-Reveal,Chainlink VRF)공부
 
 ---
@@ -79,7 +79,7 @@
 > ERC-20 토큰 학습
 
 ### 공부
-- CryptoZombies로 솔리디티 실습
+- CryptoZombies로 Solidity 실습
 - Ethereum Token ERC-20 공부
 
 ---
@@ -89,7 +89,7 @@
 > 블록체인 계층 및 합의 알고리즘 학습
 
 ### 공부
-- CryptoZombies로 솔리디티 실습
+- CryptoZombies로 Solidity 실습
 - BlockChain 계층 이론공부
 - 합의알고리즘(PoW, PoS, DPoS, PoA)공부
 
