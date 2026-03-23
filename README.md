@@ -608,14 +608,12 @@
 
 ---
 
-# 2025-08-00 ~ 2025-10-31
+# 2025-08 ~ 2025-10
 
-> 전래동화 기반 학습 코딩 앱 EduCoin 제작
+> 전래동화 기반 학습 코딩 앱 EduCoin 개인 프로젝트
 
 ### 프로젝트
-- **EduCoin - 전래동화 학습 코딩 앱**
-  - FlutterFlow를 이용한 전체 UI/UX 설계 및 제작
-  - TTS(Text-to-Speech)를 통해 동화 텍스트를 사운드로 변환하여 삽입
+- **EduCoin - 전래동화 학습 코딩 앱 (개인)**
   - 앱 구조
     - Entry: SplashPage → OnboardPage → TrackPage (코스 선택)
     - Kid: KidsMainPage → KidRecommendPage → KidListeningPage → KidPlayPage
@@ -630,10 +628,25 @@
     - 잭과 콩나무 (난이도 중, 보상 +8)
     - 토끼와 거북이 (난이도 상, 보상 +10)
   - 주요 기능
-    - TTS 기반 오디오 재생 + 자막(CC) + 재생속도 조절
+    - TTS 기반 오디오 재생 + 자막(CC) + 재생속도 조절 (TTS 직접 제작)
     - 동화 장면을 조합하는 코딩 액티비티 (길/캐릭터/빠르기 선택)
     - EduCoin 보상 시스템 (동화 완료 시 코인 적립)
     - 오늘의 목표 및 오늘의 추천 동화 기능
     - 동화별 학습 포인트 및 난이도 표시
+
+### 개발 흐름
+- **8월**: UI 작업 위주, OnboardPage도 완성 못한 채로 마무리
+- **10월 3주차**: 현재 완성도 수준 도달
+
+### 이슈 / 메모
+- **Figma → FlutterFlow 전환**
+  - OnboardPage 제작 중 Figma의 자유도가 너무 높아서 오히려 원하는 대로 안 됨
+  - Python + Flutter로 버튼 등 기능 구현을 시도했으나 Python을 제대로 배우지 않아서 어려움
+  - 두 문제를 종합하다 FlutterFlow(노코딩 UI/UX 툴)를 발견하여 전환
+- **TTS**
+  - 유료 TTS 서비스가 너무 많았고 저작권 이슈(동화 콘텐츠)도 있어서 TTS 직접 제작
+- **FlutterFlow 위젯 한계**
+  - 무신사처럼 카테고리 안에 트리 구조로 여러 항목을 중첩하는 레이아웃 구현 시도
+  - FlutterFlow는 정해진 위젯만 제공해서 자유도가 제한됨 → 원하는 구조 구현 불가
 
 ---
