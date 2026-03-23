@@ -608,45 +608,115 @@
 
 ---
 
-# 2025-08 ~ 2025-10
+# 2025-08-01 ~ 2025-08-15
 
-> 전래동화 기반 학습 코딩 앱 EduCoin 개인 프로젝트
+> Figma로 OnboardPage 제작 시도 → 한계 인식
 
 ### 프로젝트
-- **EduCoin - 전래동화 학습 코딩 앱 (개인)**
-  - 앱 구조
-    - Entry: SplashPage → OnboardPage → TrackPage (코스 선택)
+- **EduCoin**
+  - Figma로 OnboardPage 디자인 시작
+    - 자유도가 너무 높아서 오히려 원하는 레이아웃대로 구현이 안 됨
+  - Python + Flutter로 버튼 등 기능 구현 시도
+    - Python을 제대로 배우지 않은 상태라 기능 구현 자체가 어려움
+  - Figma 자유도 문제 + Flutter 기능 구현 어려움 두 가지를 동시에 겪음
+    - 두 문제를 종합하다 FlutterFlow(노코딩 UI/UX 툴) 발견 → 다음 단계로 전환
+
+---
+
+# 2025-08-16 ~ 2025-08-31
+
+> FlutterFlow 발견 및 환경 세팅
+
+### 프로젝트
+- **EduCoin**
+  - 노코딩 UI/UX 툴 FlutterFlow 발견
+    - Figma 자유도 문제 + Python/Flutter 코딩 문제를 동시에 해결 가능하다고 판단
+  - FlutterFlow 학습 및 프로젝트 환경 세팅
+  - 앱 전체 페이지 구조 설계
+    - Entry: SplashPage → OnboardPage → TrackPage
     - Kid: KidsMainPage → KidRecommendPage → KidListeningPage → KidPlayPage
     - Components: Character_Select, Speed_Select, Track_Select
-  - 코스 구성
-    - 유아 코스 - 동화로 시작 (순서 학습)
-    - 초등 코스 - 논리로 완성 (조건/변수 학습)
+
+### 이슈 / 메모
+- FlutterFlow는 위젯이 정해져 있어서 자유도가 제한됨
+  - 무신사처럼 카테고리 안에 트리 구조로 항목을 중첩하는 레이아웃 구현 불가
+    - FlutterFlow 자체적으로는 해결 불가 → 추후 Flutter IDE에서 언어 레벨로 직접 해결
+
+---
+
+# 2025-09-01 ~ 2025-09-14
+
+> Entry 파트 제작 (SplashPage, OnboardPage, TrackPage)
+
+### 프로젝트
+- **EduCoin**
+  - SplashPage 제작 (EduCoin 로고 화면)
+  - OnboardPage 제작
+    - "쉽고 재밌는 학습 코딩 / 동화를 고르고 장면을 조합해요!" 슬라이드 구성
+    - Skip / Next 버튼 구성
+  - TrackPage 제작 (학습 코스 선택)
+    - 유아 코스 - 동화로 시작
+    - 초등 코스 - 논리로 완성
     - 심화 코스 - 아두이노 연동 (Coming Soon)
-  - 동화 콘텐츠
+
+---
+
+# 2025-09-15 ~ 2025-09-30
+
+> Kid 파트 기초 제작 및 동화 콘텐츠 구성
+
+### 프로젝트
+- **EduCoin**
+  - KidsMainPage 제작
+    - 유아 코스 헤더 + EduCoin 잔액 표시
+    - 오늘의 목표 표시
+    - 동화 목록 리스트 (난이도 + 보상 표시)
+    - 오늘의 추천 동화 시작 버튼
+  - KidRecommendPage 제작
+    - 동화 소개 + 학습 포인트 표시
+    - 난이도 / 보상 배지 구성
+  - 동화 콘텐츠 구성
     - 흥부와 놀부 (난이도 하, 보상 +4)
     - 해님 달님 (난이도 하, 보상 +6)
     - 잭과 콩나무 (난이도 중, 보상 +8)
     - 토끼와 거북이 (난이도 상, 보상 +10)
-  - 주요 기능
-    - TTS 기반 오디오 재생 + 자막(CC) + 재생속도 조절 (TTS 직접 제작)
-    - 동화 장면을 조합하는 코딩 액티비티 (길/캐릭터/빠르기 선택)
-    - EduCoin 보상 시스템 (동화 완료 시 코인 적립)
-    - 오늘의 목표 및 오늘의 추천 동화 기능
-    - 동화별 학습 포인트 및 난이도 표시
-
-### 개발 흐름
-- **8월**: UI 작업 위주, OnboardPage도 완성 못한 채로 마무리
-- **10월 3주차**: 현재 완성도 수준 도달
 
 ### 이슈 / 메모
-- **Figma → FlutterFlow 전환**
-  - OnboardPage 제작 중 Figma의 자유도가 너무 높아서 오히려 원하는 대로 안 됨
-  - Python + Flutter로 버튼 등 기능 구현을 시도했으나 Python을 제대로 배우지 않아서 어려움
-  - 두 문제를 종합하다 FlutterFlow(노코딩 UI/UX 툴)를 발견하여 전환
-- **TTS**
-  - 유료 TTS 서비스가 너무 많았고 저작권 이슈(동화 콘텐츠)도 있어서 TTS 직접 제작
-- **FlutterFlow 위젯 한계**
-  - 무신사처럼 카테고리 안에 트리 구조로 여러 항목을 중첩하는 레이아웃 구현 시도
-  - FlutterFlow는 정해진 위젯만 제공해서 자유도가 제한됨 → 원하는 구조 구현 불가
+- 동화 저작권 이슈
+  - 시중 동화 콘텐츠는 저작권 문제 → 저작권 걱정 없는 전래동화 기반으로 방향 정리
+
+---
+
+# 2025-10-01 ~ 2025-10-14
+
+> TTS 직접 제작 및 KidListeningPage 구현
+
+### 프로젝트
+- **EduCoin**
+  - KidListeningPage 제작
+    - 동화 일러스트 + 챕터별 오디오 플레이어 구성
+    - 재생속도 조절 버튼 + 자막(CC) 버튼
+
+### 이슈 / 메모
+- TTS 유료 서비스 및 저작권 이슈
+  - 유료 TTS 서비스가 너무 많았고 음성 자체 저작권 문제도 있었음
+    - 직접 녹음 후 다듬는 방식으로 해결
+
+---
+
+# 2025-10-15 ~ 2025-10-31
+
+> KidPlayPage + 코딩 액티비티 구현, 전체 마무리
+
+### 프로젝트
+- **EduCoin**
+  - KidPlayPage 제작
+    - 동화 장면 텍스트 + 장면 조합 코딩 액티비티 구성
+    - 길 / 캐릭터 / 빠르기 선택 컴포넌트 연결
+  - EduCoin 보상 시스템 구현
+    - 동화 완료 시 코인 적립
+    - 코인 잔액 상단 표시
+  - 전체 페이지 네비게이션 연결 및 플로우 정리
+    - SplashPage → OnboardPage → TrackPage → KidsMainPage → KidRecommendPage → KidListeningPage → KidPlayPage
 
 ---
