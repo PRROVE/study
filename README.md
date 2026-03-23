@@ -693,14 +693,20 @@
 
 ### 프로젝트
 - **EduCoin**
+  - TTS 직접 제작
+    - 직접 녹음 후 Canva AI를 이용해서 음성을 선명하게 다듬는 작업 진행
+    - 완성된 오디오 파일을 FlutterFlow에 직접 업로드하여 삽입
   - KidListeningPage 제작
-    - 동화 일러스트 + 챕터별 오디오 플레이어 구성
-    - 재생속도 조절 버튼 + 자막(CC) 버튼
+    - FlutterFlow 기본 오디오 플레이어 위젯 사용
+      - 챕터별 오디오 재생 + 진행 바 구성
+      - 재생속도 조절 기능 (기본 위젯)
+      - 자막(CC) 버튼 (기본 위젯)
+    - 동화 일러스트 + 챕터 타이틀 상단 구성
 
 ### 이슈 / 메모
 - TTS 유료 서비스 및 저작권 이슈
   - 유료 TTS 서비스가 너무 많았고 음성 자체 저작권 문제도 있었음
-    - 직접 녹음 후 다듬는 방식으로 해결
+    - 직접 녹음 + Canva AI로 음질 보정하는 방식으로 해결
 
 ---
 
@@ -711,11 +717,13 @@
 ### 프로젝트
 - **EduCoin**
   - KidPlayPage 제작
-    - 동화 장면 텍스트 + 장면 조합 코딩 액티비티 구성
-    - 길 / 캐릭터 / 빠르기 선택 컴포넌트 연결
+    - 길 / 캐릭터 / 빠르기를 선택하면 PlayPage 내 해당 요소가 선택값에 따라 변경됨
+      - 애니메이션은 미구현, 선택한 값에 따라 동화 내용(텍스트)이 다르게 출력되는 구조
+      - Character_Select, Speed_Select, Track_Select 컴포넌트로 분리하여 연결
   - EduCoin 보상 시스템 구현
-    - 동화 완료 시 코인 적립
+    - 동화 완료 시 코인 적립 로직
     - 코인 잔액 상단 표시
+    - 잔액 저장은 미구현 → 추후 Blockchain Smart Contract로 관리할 계획
   - 전체 페이지 네비게이션 연결 및 플로우 정리
     - SplashPage → OnboardPage → TrackPage → KidsMainPage → KidRecommendPage → KidListeningPage → KidPlayPage
 
