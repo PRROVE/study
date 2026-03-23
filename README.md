@@ -607,3 +607,33 @@
     - [`DEMO.APP`](https://github.com/rPPG-EAR-BlockChain/DEMO.APP): 대회/전시용 가벼운 데모 앱
 
 ---
+
+# 2025-08-00 ~ 2025-10-31
+
+> 전래동화 기반 학습 코딩 앱 EduCoin 제작
+
+### 프로젝트
+- **EduCoin - 전래동화 학습 코딩 앱**
+  - FlutterFlow를 이용한 전체 UI/UX 설계 및 제작
+  - TTS(Text-to-Speech)를 통해 동화 텍스트를 사운드로 변환하여 삽입
+  - 앱 구조
+    - Entry: SplashPage → OnboardPage → TrackPage (코스 선택)
+    - Kid: KidsMainPage → KidRecommendPage → KidListeningPage → KidPlayPage
+    - Components: Character_Select, Speed_Select, Track_Select
+  - 코스 구성
+    - 유아 코스 - 동화로 시작 (순서 학습)
+    - 초등 코스 - 논리로 완성 (조건/변수 학습)
+    - 심화 코스 - 아두이노 연동 (Coming Soon)
+  - 동화 콘텐츠
+    - 흥부와 놀부 (난이도 하, 보상 +4)
+    - 해님 달님 (난이도 하, 보상 +6)
+    - 잭과 콩나무 (난이도 중, 보상 +8)
+    - 토끼와 거북이 (난이도 상, 보상 +10)
+  - 주요 기능
+    - TTS 기반 오디오 재생 + 자막(CC) + 재생속도 조절
+    - 동화 장면을 조합하는 코딩 액티비티 (길/캐릭터/빠르기 선택)
+    - EduCoin 보상 시스템 (동화 완료 시 코인 적립)
+    - 오늘의 목표 및 오늘의 추천 동화 기능
+    - 동화별 학습 포인트 및 난이도 표시
+
+---
