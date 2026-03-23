@@ -1,15 +1,3 @@
-# Study Log
-
-날짜 기반으로 그날 공부한 것, 개발한 것, 발생한 이슈와 해결 방향을 기록합니다.
-
-### 작성 양식
-- 날짜별로 구분하며 기간 단위로 묶을 수 있음
-- 각 항목은 `### 공부` / `### 프로젝트` / `### 대회` / `### 이슈 / 메모` 카테고리로 분리
-- 이슈가 있으면 반드시 해결 방법 또는 해결 방향을 함께 기록
-- 아무것도 안 한 날은 `- None...` 으로 표기
-
----
-
 # 2025-04-10 (목)
 
 > JS, Python, Git 기초 학습 시작
@@ -738,5 +726,7 @@
     - 잔액 저장은 미구현 → 추후 Blockchain Smart Contract로 관리할 계획
   - 전체 페이지 네비게이션 연결 및 플로우 정리
     - SplashPage → OnboardPage → TrackPage → KidsMainPage → KidRecommendPage → KidListeningPage → KidPlayPage
+
+> 이후 업데이트는 날짜 순서대로 아래에 계속 추가됩니다.
 
 ---
