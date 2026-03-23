@@ -640,7 +640,11 @@
 ### 이슈 / 메모
 - FlutterFlow는 위젯이 정해져 있어서 자유도가 제한됨
   - 무신사처럼 카테고리 안에 트리 구조로 항목을 중첩하는 레이아웃 구현 불가
-    - FlutterFlow 자체적으로는 해결 불가 → 추후 Flutter IDE에서 언어 레벨로 직접 해결
+    - FlutterFlow 자체적으로는 해결 불가
+
+### 업데이트
+- 추후 Flutter IDE에서 언어 레벨로 직접 해결 예정
+- 우선 FlutterFlow 기본 위젯 범위 안에서 구현 가능한 구조로 진행
 
 ---
 
@@ -683,7 +687,11 @@
 
 ### 이슈 / 메모
 - 동화 저작권 이슈
-  - 시중 동화 콘텐츠는 저작권 문제 → 저작권 걱정 없는 전래동화 기반으로 방향 정리
+  - 시중 동화 콘텐츠는 저작권 문제
+
+### 업데이트
+- 저작권 걱정 없는 전래동화 기반으로 콘텐츠 방향 확정
+- KidListeningPage, KidPlayPage 제작으로 이어짐
 
 ---
 
@@ -706,7 +714,10 @@
 ### 이슈 / 메모
 - TTS 유료 서비스 및 저작권 이슈
   - 유료 TTS 서비스가 너무 많았고 음성 자체 저작권 문제도 있었음
-    - 직접 녹음 + Canva AI로 음질 보정하는 방식으로 해결
+
+### 업데이트
+- 직접 녹음 + Canva AI로 음질 보정하는 방식으로 해결
+- 완성된 오디오 파일 FlutterFlow에 업로드하여 삽입 완료
 
 ---
 
@@ -727,6 +738,15 @@
   - 전체 페이지 네비게이션 연결 및 플로우 정리
     - SplashPage → OnboardPage → TrackPage → KidsMainPage → KidRecommendPage → KidListeningPage → KidPlayPage
 
-> 이후 업데이트는 날짜 순서대로 아래에 계속 추가됩니다.
+### 이슈 / 메모
+- 애니메이션 미구현
+- EduCoin 잔액 저장 미구현
+- FlutterFlow 위젯 한계로 트리 구조 레이아웃 구현 불가
+
+### 업데이트
+- 애니메이션 → Flutter IDE에서 언어 레벨로 직접 구현 예정
+- EduCoin 잔액 저장 → Blockchain Smart Contract 연동 예정
+- 위젯 한계 → Flutter IDE에서 직접 코드로 해결 예정
+- 심화 코스 (아두이노 연동) 구현 예정
 
 ---
