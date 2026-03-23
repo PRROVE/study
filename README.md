@@ -60,7 +60,7 @@
 ### 공부
 - U-net 논문 리뷰 CNN공부
 - CryptoZombies로 Solidity 실습
-- js와 Solinity에 차이점 공부
+- js와 Solidity에 차이점 공부
 
 ---
 
@@ -152,6 +152,8 @@
 
 # 2025-04-28 (월)
 
+> 시험공부
+
 - 시험공부
 
 ---
@@ -242,7 +244,7 @@
 > rPPG + Blockchain 프로젝트 시작
 
 ### 프로젝트
-- **RPPG with BlockChain**
+- **rPPG with Blockchain**
   - web
     - UI 및 TS
     - webcam기능
@@ -257,7 +259,7 @@
 > React + TS 기반 웹 구조 설계
 
 ### 프로젝트
-- **RPPG with BlockChain**
+- **rPPG with Blockchain**
   - React와 TS를 사용함
     - 웹 스크롤 기능
     - 이미지 및 제목 상단
@@ -270,7 +272,7 @@
 > CSS 적용, Contract 시스템 빌드, MetaMask 로그인
 
 ### 프로젝트
-- **RPPG with BlockChain**
+- **rPPG with Blockchain**
   - css 생성 및 이미지 적용
   - webcam test
   - contract시스템 build
@@ -284,7 +286,7 @@
 > MetaMask onClick 이슈 발생
 
 ### 프로젝트
-- **RPPG with BlockChain**
+- **rPPG with Blockchain**
   - metamask 버튼 생성 및 css 적용
 
 ### 이슈 / 메모
@@ -307,13 +309,16 @@
 > onClick 에러 수정, 멀티 지갑 추가
 
 ### 프로젝트
-- **RPPG with BlockChain**
+- **rPPG with Blockchain**
   - Onclick 에러수정 -> eventlistener형태로 바꿈
   - metamask 이외에도 coinwallet등 다른 wallet 추가
 
 ### 이슈 / 메모
 - metamask와 coinwallet등 한번에 로그인하는 issue 발생
 - onclick으로 구조 재변경
+
+### 업데이트
+- metamask만 남기고 다른 wallet 삭제 후 단일 지갑으로 정리 (05-18)
 
 ---
 
@@ -322,7 +327,7 @@
 > Contract 연결 후 첫 통합 테스트
 
 ### 프로젝트
-- **RPPG with BlockChain**
+- **rPPG with Blockchain**
   - Contract 시스템 Contract send button과 연결 후 First Test
     - WebCam기능 문제없음
     - Login & out 기능 문제없음
@@ -342,7 +347,7 @@
 > Contract data 전송 이슈 해결
 
 ### 프로젝트
-- **RPPG with BlockChain**
+- **rPPG with Blockchain**
   - Contract data가 넘어가지 않는 issue 수정
     - byte32로 바꿔서 데이터를 넘김(데이터가 문제없이 넘어가나 현재는 더미 데이터기에 차후에 모델 데이터를 정확히 받아서 수정해야함)
 
@@ -353,7 +358,7 @@
 > Authorized Data Access 버튼 구현
 
 ### 프로젝트
-- **RPPG with BlockChain**
+- **rPPG with Blockchain**
   - Authorized Data Access 버튼 구현
     - Contract send에서 한 Contract를 특정 허가된 인물이 데이터를 요구하면 데이터를 넘겨주는 버튼
 
@@ -371,7 +376,7 @@
 > CNN+LSTM 모델 웹 적용 테스트
 
 ### 프로젝트
-- **RPPG with BlockChain**
+- **rPPG with Blockchain**
   - CNN+LSTM 모델을 백그라운드 웹에 적용시키는 Test
 
 ### 이슈 / 메모
@@ -392,7 +397,7 @@
 > Authorized Access 기준 구체화
 
 ### 프로젝트
-- **Rppg with Block Chain**
+- **rPPG with Blockchain**
   - Authorized Data Access버튼 관련 추가적인 진행
     - 어떤 기준에서 승인된 wallet address를 가진 사람이 승인되는지 정확하지 못한 issue
       - require을 통해 msg.sender와 contract를 한 주소가 같으면 인증된 사용자라는걸 기준을 추가함
@@ -411,7 +416,7 @@
 > rPPG 리팩토링 및 Contract 이슈 해결
 
 ### 프로젝트
-- **Rppg with Block Chain**
+- **rPPG with Blockchain**
   - Contract send를 누르지않으면 호출되지 버튼을 누를 수 없는 issue 보완
     - msg.sender가 Abi오류로 인해서 불러와지지 않는 문제를 해결
       - Remix를 통해서 RppgContract.sol배포후 address 보완 및 Abi해결
@@ -441,7 +446,7 @@
 > WhiteList 시스템 구축
 
 ### 프로젝트
-- **Rppg with Block Chain**
+- **rPPG with Blockchain**
   - whiteList구축
     - 기존에는 contract하면서 constructor로 인증된 사용자 등록 -> 허가 Address를 추가하기 위해서는 매번 새로운 contract를 생성해야함
     - --> 매번 contract에 Deploy를 통해서 Access Address를 추가할 필요 없이 contract내에 저장이 됨으로 관리가 쉬워짐
@@ -455,7 +460,7 @@
 > WhiteList 고도화 및 리팩토링
 
 ### 프로젝트
-- **Rppg with Block Chain**
+- **rPPG with Blockchain**
   - whiteList구축2
     - Authorized Data Access 버튼을 눌렀을때 Doctor이용자면 User의 모든 데이터가 나와야하는데 하나만 나오는 issue
       - User array를 만들어 버튼을 누르게 되면 User Array 데이터가 넘어가게 변경
@@ -467,12 +472,11 @@
       - Css -> Scss로 변경
   - 2025-05-18 Doctor Address로 로그인한 후 Data table이 안없어지는 issue
     - 로그아웃 or 계정 변경 시에 table초기화 인증상태 초기화로 폼을 숨기는걸로 해결
-  - Update 예정
-    - FaceMash
-    - 모델적용
-    - ERC20 시스템 구축
-    - 인증시스템 구체화
-    - issue 해결 최우선
+### 업데이트
+- FaceMesh 적용 (05-21)
+- CNN 모델 → React + TS 순수 로직으로 대체 (05-22)
+- ERC20 시스템 구축, 인증시스템 구체화 예정
+- issue 해결 최우선
 
 ---
 
@@ -481,7 +485,7 @@
 > FaceMesh 적용
 
 ### 프로젝트
-- **Rppg with Block Chain**
+- **rPPG with Blockchain**
   - WebCam Update
     - Opensource에서 Facemash에 대한 코드를 얻어서 적용 Videoref에 적용
       - 눈과 눈썹, 입을 강조화 시킨 facemash
@@ -493,7 +497,7 @@
 > CNN 모델 → 순수 로직으로 대체, EAR/Roll/Pitch/Yaw 시각화
 
 ### 프로젝트
-- **Rppg with Block Chain**
+- **rPPG with Blockchain**
   - cnn모델을 로직으로 변경
     - py기반의 cnn모델을 opencv로 백그라운드에서 돌리면 랜더링도 느리지만 실시간으로 정보를 받는 것 조차도 쉽지않음
     - React + ts 기반의 단순 로직으로 변경 후 Webcam에 적용
@@ -529,7 +533,7 @@
 > 전체 통합 테스트 및 리팩토링
 
 ### 프로젝트
-- **Rppg with Block Chain**
+- **rPPG with Blockchain**
   - All Test
     - Webcam 정삭작동 유무
     - EAR 및 Roll, Pitch, Yaw 실시간 수치 유무
@@ -566,7 +570,7 @@
 > rPPG + Blockchain 프로젝트 마무리
 
 ### 프로젝트
-- **Rppg with Block Chain**
+- **rPPG with Blockchain**
   - 전체 시스템 통합 및 구조 개선
     - WebCam + EAR + rPPG 모델 → 생체신호 추출 파이프라인 완성
     - 추출된 데이터 → Smart Contract에 저장 → Doctor 지갑 주소에 따라 접근 제어
